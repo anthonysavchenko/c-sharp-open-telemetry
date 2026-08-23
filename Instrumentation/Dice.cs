@@ -34,6 +34,14 @@ public class Dice
 
   private int rollOnce()
   {
-    return Random.Shared.Next(min, max + 1);
+    using (var childActivity = activitySource.StartActivity("rollOnce"))
+    {
+      int result;
+
+      result = Random.Shared.Next(min, max + 1);
+      childActivity?.SetTag("dicelib.rolled", result);
+
+      return result;
+    }
   }
 }
