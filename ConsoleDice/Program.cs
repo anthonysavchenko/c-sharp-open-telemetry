@@ -1,6 +1,7 @@
 ﻿using ConsoleDice;
 
 using var activity = new FooBarActivity();
+var counter = new FooBarCounter();
 
 activity.SetTags(bar: "Hello, World!", baz: [1, 2, 3]);
 
@@ -22,5 +23,9 @@ while (true)
 
   var result = new Dice(1, 6).RollTheDice(rolls);
 
+  counter.Add(rolls);
+
   Console.WriteLine($"Rolled the dice {rolls} times: {string.Join(", ", result)}");
 }
+
+TracingWrapper.Dispose();

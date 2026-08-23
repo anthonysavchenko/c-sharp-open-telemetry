@@ -4,13 +4,13 @@ namespace ConsoleDice;
 
 public sealed class FooBarActivity : IDisposable
 {
-  private static readonly string ActivityName = "dice-roll";
+  private static readonly string _activityName = "dice-roll";
 
   private readonly Activity? _activity;
 
   public FooBarActivity()
   {
-    _activity = TracingWrapper.ActivitySource.StartActivity(ActivityName);
+    _activity = TracingWrapper.ActivitySource.StartActivity(_activityName);
 
     _activity?.SetTag("foo", 1);
   }
