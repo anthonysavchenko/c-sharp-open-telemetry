@@ -2,15 +2,15 @@ using System.Diagnostics;
 
 namespace ConsoleDice;
 
-public sealed class DiceActivity : IDisposable
+public sealed class FooBarActivity : IDisposable
 {
   private static readonly string ActivityName = "dice-roll";
 
   private readonly Activity? _activity;
 
-  public DiceActivity(DiceActivitySource activitySource)
+  public FooBarActivity()
   {
-    _activity = activitySource.StartActivity(ActivityName);
+    _activity = TracingWrapper.ActivitySource.StartActivity(ActivityName);
 
     _activity?.SetTag("foo", 1);
   }
