@@ -1,23 +1,7 @@
-﻿using System.Diagnostics;
-using OpenTelemetry;
-using OpenTelemetry.Resources;
-using OpenTelemetry.Trace;
+﻿using ConsoleDice;
 
-const string DiceActivitySourceName = "ConsoleDice.Dice";
+using var provider = new DiceTracerProvider();
+using var source = new DiceActivitySource();
+using var activity = new DiceActivity(source);
 
-using var tracerProvider = Sdk
-  .CreateTracerProviderBuilder()
-  .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("getting-started"))
-  .AddSource(DiceActivitySourceName)
-  .AddConsoleExporter()
-  .Build();
-
-var DiceActivitySource = new ActivitySource(DiceActivitySourceName);
-
-using var activity = DiceActivitySource.StartActivity("SayHello");
-
-activity?.SetTag("foo", 1);
-activity?.SetTag("bar", "Hello, World!");
-activity?.SetTag("baz", new int[] { 1, 2, 3 });
-
-activity?.SetStatus(ActivityStatusCode.Ok);
+activity.SetTags(bar: "Hello, World!", baz: [1, 2, 3]);
