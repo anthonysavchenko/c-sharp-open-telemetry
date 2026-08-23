@@ -9,7 +9,7 @@ public class FooBarCounter
 
   public FooBarCounter()
   {
-    _counter = TracingWrapper.Meter.CreateCounter<long>(_counterName);
+    _counter = TelemetryWrapper.Meter.CreateCounter<long>(_counterName);
   }
 
   public void Add(long delta) => _counter.Add(delta);

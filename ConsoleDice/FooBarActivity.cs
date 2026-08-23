@@ -10,7 +10,7 @@ public sealed class FooBarActivity : IDisposable
 
   public FooBarActivity()
   {
-    _activity = TracingWrapper.ActivitySource.StartActivity(_activityName);
+    _activity = TelemetryWrapper.ActivitySource.StartActivity(_activityName);
 
     _activity?.SetTag("foo", 1);
   }

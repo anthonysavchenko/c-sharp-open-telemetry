@@ -10,7 +10,7 @@ public sealed class RollOnceActivity : IDisposable
 
   public RollOnceActivity()
   {
-    _activity = TracingWrapper.ActivitySource.StartActivity(ActivityName);
+    _activity = TelemetryWrapper.ActivitySource.StartActivity(ActivityName);
   }
 
   public void SetTags(int rollResult)

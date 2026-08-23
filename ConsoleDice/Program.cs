@@ -28,4 +28,4 @@ while (true)
   Console.WriteLine($"Rolled the dice {rolls} times: {string.Join(", ", result)}");
 }
 
-TracingWrapper.Dispose();
+TelemetryWrapper.Dispose();

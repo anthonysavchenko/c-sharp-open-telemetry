@@ -10,7 +10,7 @@ public sealed class RollingDiceActivity : IDisposable
 
   public RollingDiceActivity()
   {
-    _activity = TracingWrapper.ActivitySource.StartActivity(ActivityName);
+    _activity = TelemetryWrapper.ActivitySource.StartActivity(ActivityName);
   }
 
   public void Dispose()

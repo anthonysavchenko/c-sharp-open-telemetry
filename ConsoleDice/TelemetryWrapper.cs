@@ -7,7 +7,7 @@ using OpenTelemetry.Trace;
 
 namespace ConsoleDice;
 
-public sealed class TracingWrapper
+public sealed class TelemetryWrapper
 {
   private static readonly string _serviceName = "my-service-name";
   private static readonly string _libName = "MyCompany.MyProduct.MyLibrary";
