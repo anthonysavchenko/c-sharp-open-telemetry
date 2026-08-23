@@ -6,8 +6,6 @@ using OpenTelemetry.Trace;
 using Microsoft.Extensions.Logging;
 using Instrumentation;
 
-//...
-
 var serviceName = "MyServiceName";
 var serviceVersion = "1.0.0";
 

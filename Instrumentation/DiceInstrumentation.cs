@@ -8,7 +8,7 @@ namespace Instrumentation;
 /// </summary>
 public class DiceInstrumentation : IDisposable
 {
-  internal const string ActivitySourceName = "dice-server";
+  internal const string ActivitySourceName = "MyServiceName";
   internal const string ActivitySourceVersion = "1.0.0";
 
   public DiceInstrumentation()
